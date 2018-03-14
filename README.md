@@ -1,1 +1,1 @@
-# poc-playground
+# webpack4-boilerplate
