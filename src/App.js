@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom'
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
-      <p>React here!</p>
+      {props.children}
+      <Link to={'/leke'}>leke</Link>
     </div>
   )
 }
