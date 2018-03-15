@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBarSlideAlong should render correctly 1`] = `
+<div>
+  <div
+    className="ui segment pushable"
+  >
+    <div
+      className="ui inverted vertical labeled icon ui slide along left thin visible sidebar menu"
+    >
+      <div
+        className="item"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="home icon"
+        />
+        Home
+      </div>
+      <div
+        className="item"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="gamepad icon"
+        />
+        Games
+      </div>
+      <div
+        className="item"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="camera icon"
+        />
+        Channels
+      </div>
+    </div>
+    <div
+      className="pusher"
+    >
+      <div
+        className="ui basic segment"
+      >
+        <h3
+          className="ui header"
+        >
+          Application Content
+        </h3>
+        <div
+          className="sc-bdVaJa jReomQ"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

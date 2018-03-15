@@ -10,9 +10,12 @@ import {
     Redirect
   } from 'react-router-dom'
 import OrdersPage from './containers/OrdersPage'
+import SideBarSlideAlong from './components/common/SideBarSlideAlong'
 
 ReactDOM.render(
     <Router>
-        <Routes />
+        <SideBarSlideAlong>
+            <Routes />
+        </SideBarSlideAlong>
     </Router>
 , document.getElementById('app'))

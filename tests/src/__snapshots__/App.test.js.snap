@@ -2,8 +2,6 @@
 
 exports[`App should render correctly 1`] = `
 <div>
-  <p>
-    React here!
-  </p>
+   leke 
 </div>
 `;
