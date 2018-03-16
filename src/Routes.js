@@ -1,18 +1,13 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-    Redirect
-  } from 'react-router-dom'
-  import App from './App'
-  import OrdersPage from './containers/OrdersPage'
+import { Route } from 'react-router-dom'
+import App from './App'
+import * as Orders from './scenes/Orders'
 
-  const Routes = () => (
-    <div>
-      <Route exac path='/' component={App}/>
-      <Route path='/leke/' component={OrdersPage}/>
-    </div>
-  )
+const Routes = () => (
+  <div>
+    <Route exac path='/' component={App}/>
+    <Route path='/leke/' component={Orders.MyOrders}/>
+  </div>
+)
 
-  export default Routes
+export default Routes
