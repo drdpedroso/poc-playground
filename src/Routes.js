@@ -5,8 +5,8 @@ import * as Orders from './scenes/Orders'
 
 const Routes = () => (
   <div>
-    <Route exac path='/' component={App}/>
-    <Route path='/leke/' component={Orders.MyOrders}/>
+    <Route exac path='/' component={App} />
+    <Route path='/leke/' component={Orders.MyOrders} />
   </div>
 )
 

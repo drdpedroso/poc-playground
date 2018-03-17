@@ -1,11 +1,21 @@
 import React from 'react'
+import graphql from 'react-apollo/graphql'
+import { AllOrder } from './api'
 
-const MyOrders = () => {
-  return (
-    <div>
-      <p>ALGUMA COISA!</p>
-    </div>
-  )
+class MyOrders extends React.PureComponent {
+  render () {
+    console.log(JSON.parse(mock))
+    return (
+      <div>Leke</div>
+    )
+  }
 }
 
-export default MyOrders
+export default graphql(AllOrder, {
+  options: ({filter, userToken}) => ({
+    variables: {
+      filter: {'status': null, 'deliveryType': 'AGENDAR'},
+      userToken: ''
+    }
+  })
+})(MyOrders)
