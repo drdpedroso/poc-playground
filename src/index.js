@@ -17,7 +17,7 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
       <SideBarSlideAlong>
-        <Routes/>
+        <Routes />
       </SideBarSlideAlong>
     </Router>
   </ApolloProvider>

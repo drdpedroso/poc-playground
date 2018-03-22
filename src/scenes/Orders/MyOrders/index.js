@@ -5,7 +5,7 @@ import { AllOrder } from './api'
 export class MyOrders extends React.PureComponent {
   render () {
     return (
-      <div>Leke</div>
+      <div>Leke2222</div>
     )
   }
 }

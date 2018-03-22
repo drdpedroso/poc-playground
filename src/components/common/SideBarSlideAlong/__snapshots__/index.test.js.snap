@@ -8,36 +8,41 @@ exports[`SideBarSlideAlong should render correctly 1`] = `
     <div
       className="ui inverted vertical labeled icon ui slide along left thin visible sidebar menu"
     >
-      <div
+      <a
         className="item"
         onClick={[Function]}
       >
-        <i
-          aria-hidden="true"
-          className="home icon"
-        />
-        Home
-      </div>
-      <div
+        
+        PEDIDOS
+      </a>
+      <a
         className="item"
         onClick={[Function]}
       >
-        <i
-          aria-hidden="true"
-          className="gamepad icon"
-        />
-        Games
-      </div>
-      <div
+        
+        HISTÓRICO DE PEDIDOS
+      </a>
+      <a
         className="item"
         onClick={[Function]}
       >
-        <i
-          aria-hidden="true"
-          className="camera icon"
-        />
-        Channels
-      </div>
+        
+        ESTOQUE DE PRODUTOS
+      </a>
+      <a
+        className="item"
+        onClick={[Function]}
+      >
+        
+        MINHA CONTA
+      </a>
+      <a
+        className="item"
+        onClick={[Function]}
+      >
+        
+        SAIR
+      </a>
     </div>
     <div
       className="pusher"
@@ -45,11 +50,6 @@ exports[`SideBarSlideAlong should render correctly 1`] = `
       <div
         className="ui basic segment"
       >
-        <h3
-          className="ui header"
-        >
-          Application Content
-        </h3>
         <div
           className="sc-bdVaJa jReomQ"
         />

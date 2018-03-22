@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBarSlideAlong from './index'
+import {SideBarSlideAlong} from './index'
 import renderer from 'react-test-renderer'
 
 describe('SideBarSlideAlong', () => {

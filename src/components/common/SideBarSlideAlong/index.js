@@ -1,34 +1,54 @@
-import React, { Component } from 'react'
-import { Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import React from 'react'
+import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { getMenuItems } from '../../../services/menus/menus'
+import path from 'ramda/es/path'
+import { withRouter } from 'react-router-dom'
 
 const SlideBarContent = styled.div`
   min-height: 100vh
 `
 
-class SideBarSlideAlong extends Component {
+export class SideBarSlideAlong extends React.PureComponent {
+  constructor (context) {
+    super(context)
+
+    this.state = {
+      items: []
+    }
+
+    this.mountMenuItems = this.mountMenuItems.bind(this)
+  }
+
+  mountMenuItems ({item, route, icon, active}, key) {
+    return (
+      <Menu.Item onClick={_ => this.context.router.history.push(`${route}`)}
+                 {...{active, key}}>
+        {icon && <Icon name={icon}/>}
+        {item.toUpperCase() || null}
+      </Menu.Item>
+    )
+  }
+
+  componentDidMount () {
+    const currentLocation = path(['props', 'location', 'pathname'], this)
+    this.setState({items: getMenuItems(currentLocation)})
+  }
+
   render () {
+    const {items} = this.state
     return (
       <div>
         <Sidebar.Pushable as={Segment}>
           <Sidebar as={Menu} animation='slide along' width='thin' visible icon='labeled' vertical inverted>
-            <Menu.Item name='home'>
-              <Icon name='home'/>
-              Home
-            </Menu.Item>
-            <Menu.Item name='gamepad'>
-              <Icon name='gamepad'/>
-              Games
-            </Menu.Item>
-            <Menu.Item name='camera'>
-              <Icon name='camera'/>
-              Channels
-            </Menu.Item>
+            {items && items.map(this.mountMenuItems)}
           </Sidebar>
           <Sidebar.Pusher>
             <Segment basic>
-              <Header as='h3'>Application Content</Header>
-              <SlideBarContent>{this.props.children}</SlideBarContent>
+              <SlideBarContent>
+                {this.props.children}
+              </SlideBarContent>
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
@@ -37,4 +57,14 @@ class SideBarSlideAlong extends Component {
   }
 }
 
-export default SideBarSlideAlong
+SideBarSlideAlong.propTypes = {
+  items: PropTypes.array
+}
+
+SideBarSlideAlong.contextTypes = {
+  router: PropTypes.shape({
+    history: PropTypes.object.isRequired
+  })
+}
+
+export default withRouter(SideBarSlideAlong)

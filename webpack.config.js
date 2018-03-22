@@ -1,12 +1,13 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 module.exports = {
+  devtool: 'eval-source-map',
   output: {
     publicPath: '/'
   },
   devServer: {
     compress: true,
     port: 9000,
-    historyApiFallback: true  
+    historyApiFallback: true
   },
   module: {
     rules: [
