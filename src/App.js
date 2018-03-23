@@ -6,7 +6,6 @@ class App extends React.PureComponent {
       <div> leke </div>
     )
   }
-
 }
 
 export default App

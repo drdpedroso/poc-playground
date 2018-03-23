@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrdersHistory should render correctly 1`] = `
+<div>
+  leke3333
+</div>
+`;
