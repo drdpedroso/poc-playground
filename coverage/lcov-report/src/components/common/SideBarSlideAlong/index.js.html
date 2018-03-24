@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">92.31% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>12/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>4/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>12/12</span>
       </div>
     </div>
   </div>
@@ -82,7 +82,43 @@
 37
 38
 39
-40</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -94,6 +130,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,46 +174,69 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react'
-import { Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
+import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { getMenuItems } from '../../../services/menus/menus'
+import path from 'ramda/es/path'
+import { withRouter } from 'react-router-dom'
 &nbsp;
 const SlideBarContent = styled.div`
   min-height: 100vh
 `
 &nbsp;
-class SideBarSlideAlong extends Component {
+export class SideBarSlideAlong extends React.PureComponent {
+  constructor (context) {
+    super(context)
+&nbsp;
+    this.state = {
+      items: []
+    }
+&nbsp;
+    this.mountMenuItems = this.mountMenuItems.bind(this)
+  }
+&nbsp;
+  mountMenuItems ({item, route, icon, active}, key) {
+    const changeRoute = <span class="fstat-no" title="function not covered" >_ </span>=&gt; <span class="cstat-no" title="statement not covered" >this.context.router.history.push(`${route}`)</span>
+    return (
+      &lt;Menu.Item onClick={changeRoute}
+                 {...{active, key}}&gt;
+        {icon &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;Icon name={icon} /&gt;}</span>
+        {item.toUpperCase() || <span class="branch-1 cbranch-no" title="branch not covered" >null}</span>
+      &lt;/Menu.Item&gt;
+    )
+  }
+&nbsp;
+  componentDidMount () {
+    const currentLocation = path(['props', 'location', 'pathname'], this)
+    this.setState({items: getMenuItems(currentLocation)})
+  }
+&nbsp;
   render () {
+    const {items} = this.state
     return (
       &lt;div&gt;
         &lt;Sidebar.Pushable as={Segment}&gt;
           &lt;Sidebar as={Menu} animation='slide along' width='thin' visible icon='labeled' vertical inverted&gt;
-            &lt;Menu.Item name='home'&gt;
-              &lt;Icon name='home'/&gt;
-              Home
-            &lt;/Menu.Item&gt;
-            &lt;Menu.Item name='gamepad'&gt;
-              &lt;Icon name='gamepad'/&gt;
-              Games
-            &lt;/Menu.Item&gt;
-            &lt;Menu.Item name='camera'&gt;
-              &lt;Icon name='camera'/&gt;
-              Channels
-            &lt;/Menu.Item&gt;
+            {items &amp;&amp; items.map(this.mountMenuItems)}
           &lt;/Sidebar&gt;
           &lt;Sidebar.Pusher&gt;
             &lt;Segment basic&gt;
-              &lt;Header as='h3'&gt;Application Content&lt;/Header&gt;
-              &lt;SlideBarContent&gt;{this.props.children}&lt;/SlideBarContent&gt;
+              &lt;SlideBarContent&gt;
+                {this.props.children}
+              &lt;/SlideBarContent&gt;
             &lt;/Segment&gt;
           &lt;/Sidebar.Pusher&gt;
         &lt;/Sidebar.Pushable&gt;
@@ -160,13 +245,24 @@ class SideBarSlideAlong extends Component {
   }
 }
 &nbsp;
-export default SideBarSlideAlong</pre></td></tr>
+SideBarSlideAlong.propTypes = {
+  items: PropTypes.array
+}
+&nbsp;
+SideBarSlideAlong.contextTypes = {
+  router: PropTypes.shape({
+    history: PropTypes.object.isRequired
+  })
+}
+&nbsp;
+export default withRouter(SideBarSlideAlong)
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 18 2018 19:33:43 GMT-0300 (-03)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Mar 24 2018 14:32:54 GMT-0300 (-03)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

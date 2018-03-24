@@ -78,6 +78,17 @@
     "styled-components": "^3.2.3"
   },
   "jest": {
+    "timers": "fake",
+    "coverageDirectory": "./coverage/",
+    "collectCoverageFrom": [
+      "src/**/*[!stories].js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/index.js",
+      "src/scenes/Orders/index.js",
+      "src/scenes/Inventory/index.js"
+    ],
+    "collectCoverage": true,
     "setupTestFrameworkScriptFile": "<rootDir>/tools/setupTests.js",
     "transformIgnorePatterns": []
   }

@@ -22,10 +22,11 @@ export class SideBarSlideAlong extends React.PureComponent {
   }
 
   mountMenuItems ({item, route, icon, active}, key) {
+    const changeRoute = _ => this.context.router.history.push(`${route}`)
     return (
-      <Menu.Item onClick={_ => this.context.router.history.push(`${route}`)}
+      <Menu.Item onClick={changeRoute}
                  {...{active, key}}>
-        {icon && <Icon name={icon}/>}
+        {icon && <Icon name={icon} />}
         {item.toUpperCase() || null}
       </Menu.Item>
     )

@@ -1,10 +1,10 @@
 import React from 'react'
-import { SideBarSlideAlong } from './index'
+import { OrderDetails } from './index'
 import renderer from 'react-test-renderer'
 
-describe('SideBarSlideAlong', () => {
+describe('OrderDetails ', () => {
   it('should render correctly', () => {
-    const component = renderer.create(<SideBarSlideAlong/>)
+    const component = renderer.create(<OrderDetails />)
     expect(component).toMatchSnapshot()
   })
 })
