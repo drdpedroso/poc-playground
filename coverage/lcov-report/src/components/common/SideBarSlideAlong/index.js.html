@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">76.47% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/13</span>
+        <span class='fraction'>13/17</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">66.67% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">57.14% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>4/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">76.47% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/12</span>
+        <span class='fraction'>13/17</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -114,7 +114,15 @@
 69
 70
 71
-72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+72
+73
+74
+75
+76
+77
+78
+79
+80</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,11 +143,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,7 +164,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,12 +222,19 @@ export class SideBarSlideAlong extends React.PureComponent {
     }
 &nbsp;
     this.mountMenuItems = this.mountMenuItems.bind(this)
+    this.changeRoute = this.changeRoute.bind(this)
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ch</span>angeRoute (route) {
+<span class="cstat-no" title="statement not covered" >    this.setState({items: getMenuItems(route)}, <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      console.log(this.state.items)</span>
+    })
+<span class="cstat-no" title="statement not covered" >    this.context.router.history.push(`${route}`)</span>
   }
 &nbsp;
   mountMenuItems ({item, route, icon, active}, key) {
-    const changeRoute = <span class="fstat-no" title="function not covered" >_ </span>=&gt; <span class="cstat-no" title="statement not covered" >this.context.router.history.push(`${route}`)</span>
     return (
-      &lt;Menu.Item onClick={changeRoute}
+      &lt;Menu.Item onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.changeRoute(route)}</span>
                  {...{active, key}}&gt;
         {icon &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;Icon name={icon} /&gt;}</span>
         {item.toUpperCase() || <span class="branch-1 cbranch-no" title="branch not covered" >null}</span>
@@ -221,6 +244,7 @@ export class SideBarSlideAlong extends React.PureComponent {
 &nbsp;
   componentDidMount () {
     const currentLocation = path(['props', 'location', 'pathname'], this)
+    console.log(currentLocation)
     this.setState({items: getMenuItems(currentLocation)})
   }
 &nbsp;
@@ -262,7 +286,7 @@ export default withRouter(SideBarSlideAlong)
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Mar 24 2018 14:32:54 GMT-0300 (-03)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 25 2018 18:13:35 GMT-0300 (-03)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

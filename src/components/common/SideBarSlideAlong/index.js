@@ -19,12 +19,19 @@ export class SideBarSlideAlong extends React.PureComponent {
     }
 
     this.mountMenuItems = this.mountMenuItems.bind(this)
+    this.changeRoute = this.changeRoute.bind(this)
+  }
+
+  changeRoute (route) {
+    this.setState({items: getMenuItems(route)}, () => {
+      console.log(this.state.items)
+    })
+    this.context.router.history.push(`${route}`)
   }
 
   mountMenuItems ({item, route, icon, active}, key) {
-    const changeRoute = _ => this.context.router.history.push(`${route}`)
     return (
-      <Menu.Item onClick={changeRoute}
+      <Menu.Item onClick={() => this.changeRoute(route)}
                  {...{active, key}}>
         {icon && <Icon name={icon} />}
         {item.toUpperCase() || null}
@@ -34,6 +41,7 @@ export class SideBarSlideAlong extends React.PureComponent {
 
   componentDidMount () {
     const currentLocation = path(['props', 'location', 'pathname'], this)
+    console.log(currentLocation)
     this.setState({items: getMenuItems(currentLocation)})
   }
 
