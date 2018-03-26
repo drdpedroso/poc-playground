@@ -4,10 +4,18 @@ import sortBy from 'lodash/sortBy'
 import map from 'lodash/map'
 
 const tableData = [
-  {name: 'John', age: 15, gender: 'Male'},
-  {name: 'Amber', age: 40, gender: 'Female'},
-  {name: 'Leslie', age: 25, gender: 'Female'},
-  {name: 'Ben', age: 70, gender: 'Male'},
+  {orderNumber: '37391804', name: 'Leonardo Cadastro', rating: 1.0, date: '20/10/2017', order: 'R$ 224.92'},
+  {orderNumber: '32132122', name: 'Eduardo pedroso', rating: 2.0, date: '20/10/2017', order: 'R$ 229.92'},
+  {orderNumber: '37391804', name: 'Leonardo Cadastro', rating: 3.0, date: '20/10/2017', order: 'R$ 224.92'},
+  {orderNumber: '37391804', name: 'Leonardo Cadastro', rating: 4.0, date: '20/10/2017', order: 'R$ 224.92'}
+]
+
+const tableHeading = [
+  'Order Number',
+  'Name',
+  'Rating',
+  'Date',
+  'Order'
 ]
 
 export default class TableExampleSortable extends Component {
@@ -24,7 +32,6 @@ export default class TableExampleSortable extends Component {
 
   handleSort (clickedColumn) {
     const {column, data, direction} = this.state
-
     if (column !== clickedColumn) {
       this.setState({
         column: clickedColumn,
@@ -37,7 +44,7 @@ export default class TableExampleSortable extends Component {
 
     this.setState({
       data: data.reverse(),
-      direction: direction === 'ascending' ? 'descending' : 'ascending',
+      direction: direction === 'ascending' ? 'descending' : 'ascending'
     })
   }
 
@@ -48,23 +55,31 @@ export default class TableExampleSortable extends Component {
       <Table sortable celled fixed>
         <Table.Header>
           <Table.Row>
+            <Table.HeaderCell sorted={column === 'orderNumber' ? direction : null} onClick={() => this.handleSort('orderNumber')}>
+              Order Number
+            </Table.HeaderCell>
             <Table.HeaderCell sorted={column === 'name' ? direction : null} onClick={() => this.handleSort('name')}>
               Name
             </Table.HeaderCell>
-            <Table.HeaderCell sorted={column === 'age' ? direction : null} onClick={() => this.handleSort('age')}>
-              Age
+            <Table.HeaderCell sorted={column === 'rating' ? direction : null} onClick={() => this.handleSort('rating')}>
+              Rating
             </Table.HeaderCell>
-            <Table.HeaderCell sorted={column === 'gender' ? direction : null} onClick={() => this.handleSort('gender')}>
-              Gender
+            <Table.HeaderCell sorted={column === 'date' ? direction : null} onClick={() => this.handleSort('date')}>
+              Date
+            </Table.HeaderCell>
+            <Table.HeaderCell sorted={column === 'order' ? direction : null} onClick={() => this.handleSort('order')}>
+              Order
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {map(data, ({age, gender, name}) => (
-            <Table.Row key={name}>
+          {map(data, ({orderNumber, name, rating, date, order}, key) => (
+            <Table.Row key={key}>
+              <Table.Cell>{orderNumber}</Table.Cell>
               <Table.Cell>{name}</Table.Cell>
-              <Table.Cell>{age}</Table.Cell>
-              <Table.Cell>{gender}</Table.Cell>
+              <Table.Cell>{rating}</Table.Cell>
+              <Table.Cell>{date}</Table.Cell>
+              <Table.Cell>{order}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

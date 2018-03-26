@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">46.67% </span>
+        <span class="strong">44.44% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/15</span>
+        <span class='fraction'>8/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">35.71% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/10</span>
+        <span class='fraction'>5/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">42.86% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/7</span>
+        <span class='fraction'>3/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">46.67% </span>
+        <span class="strong">44.44% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/15</span>
+        <span class='fraction'>8/18</span>
       </div>
     </div>
   </div>
@@ -117,12 +117,35 @@
 72
 73
 74
-75</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,7 +166,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,6 +187,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -191,16 +219,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react'
 import { Table } from 'semantic-ui-react'
 import sortBy from 'lodash/sortBy'
 import map from 'lodash/map'
 &nbsp;
 const tableData = [
-  {name: 'John', age: 15, gender: 'Male'},
-  {name: 'Amber', age: 40, gender: 'Female'},
-  {name: 'Leslie', age: 25, gender: 'Female'},
-  {name: 'Ben', age: 70, gender: 'Male'},
+  {orderNumber: '37391804', name: 'Leonardo Cadastro', rating: 1.0, date: '20/10/2017', order: 'R$ 224.92'},
+  {orderNumber: '32132122', name: 'Eduardo pedroso', rating: 2.0, date: '20/10/2017', order: 'R$ 229.92'},
+  {orderNumber: '37391804', name: 'Leonardo Cadastro', rating: 3.0, date: '20/10/2017', order: 'R$ 224.92'},
+  {orderNumber: '37391804', name: 'Leonardo Cadastro', rating: 4.0, date: '20/10/2017', order: 'R$ 224.92'}
+]
+&nbsp;
+const tableHeading = [
+  'Order Number',
+  'Name',
+  'Rating',
+  'Date',
+  'Order'
 ]
 &nbsp;
 export default class TableExampleSortable extends Component {
@@ -217,7 +255,6 @@ export default class TableExampleSortable extends Component {
 &nbsp;
 <span class="fstat-no" title="function not covered" >  ha</span>ndleSort (clickedColumn) {
     const {column, data, direction} = <span class="cstat-no" title="statement not covered" >this.state</span>
-&nbsp;
 <span class="cstat-no" title="statement not covered" >    if (column !== clickedColumn) {</span>
 <span class="cstat-no" title="statement not covered" >      this.setState({</span>
         column: clickedColumn,
@@ -230,7 +267,7 @@ export default class TableExampleSortable extends Component {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    this.setState({</span>
       data: data.reverse(),
-      direction: direction === 'ascending' ? 'descending' : 'ascending',
+      direction: direction === 'ascending' ? 'descending' : 'ascending'
     })
   }
 &nbsp;
@@ -241,23 +278,31 @@ export default class TableExampleSortable extends Component {
       &lt;Table sortable celled fixed&gt;
         &lt;Table.Header&gt;
           &lt;Table.Row&gt;
+            &lt;Table.HeaderCell sorted={column === 'orderNumber' ? <span class="branch-0 cbranch-no" title="branch not covered" >direction </span>: null} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.handleSort('orderNumber')}</span>&gt;
+              Order Number
+            &lt;/Table.HeaderCell&gt;
             &lt;Table.HeaderCell sorted={column === 'name' ? <span class="branch-0 cbranch-no" title="branch not covered" >direction </span>: null} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.handleSort('name')}</span>&gt;
               Name
             &lt;/Table.HeaderCell&gt;
-            &lt;Table.HeaderCell sorted={column === 'age' ? <span class="branch-0 cbranch-no" title="branch not covered" >direction </span>: null} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.handleSort('age')}</span>&gt;
-              Age
+            &lt;Table.HeaderCell sorted={column === 'rating' ? <span class="branch-0 cbranch-no" title="branch not covered" >direction </span>: null} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.handleSort('rating')}</span>&gt;
+              Rating
             &lt;/Table.HeaderCell&gt;
-            &lt;Table.HeaderCell sorted={column === 'gender' ? <span class="branch-0 cbranch-no" title="branch not covered" >direction </span>: null} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.handleSort('gender')}</span>&gt;
-              Gender
+            &lt;Table.HeaderCell sorted={column === 'date' ? <span class="branch-0 cbranch-no" title="branch not covered" >direction </span>: null} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.handleSort('date')}</span>&gt;
+              Date
+            &lt;/Table.HeaderCell&gt;
+            &lt;Table.HeaderCell sorted={column === 'order' ? <span class="branch-0 cbranch-no" title="branch not covered" >direction </span>: null} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.handleSort('order')}</span>&gt;
+              Order
             &lt;/Table.HeaderCell&gt;
           &lt;/Table.Row&gt;
         &lt;/Table.Header&gt;
         &lt;Table.Body&gt;
-          {map(data, ({age, gender, name}) =&gt; (
-            &lt;Table.Row key={name}&gt;
+          {map(data, ({orderNumber, name, rating, date, order}, key) =&gt; (
+            &lt;Table.Row key={key}&gt;
+              &lt;Table.Cell&gt;{orderNumber}&lt;/Table.Cell&gt;
               &lt;Table.Cell&gt;{name}&lt;/Table.Cell&gt;
-              &lt;Table.Cell&gt;{age}&lt;/Table.Cell&gt;
-              &lt;Table.Cell&gt;{gender}&lt;/Table.Cell&gt;
+              &lt;Table.Cell&gt;{rating}&lt;/Table.Cell&gt;
+              &lt;Table.Cell&gt;{date}&lt;/Table.Cell&gt;
+              &lt;Table.Cell&gt;{order}&lt;/Table.Cell&gt;
             &lt;/Table.Row&gt;
           ))}
         &lt;/Table.Body&gt;
@@ -271,7 +316,7 @@ export default class TableExampleSortable extends Component {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Mar 26 2018 10:16:41 GMT-0300 (-03)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Mar 26 2018 13:15:34 GMT-0300 (-03)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

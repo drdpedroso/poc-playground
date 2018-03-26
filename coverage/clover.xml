@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1522070201450" clover="3.2.0">
-  <project timestamp="1522070201450" name="All files">
-    <metrics statements="43" coveredstatements="30" conditionals="16" coveredconditionals="7" methods="22" coveredmethods="13" elements="81" coveredelements="50" complexity="0" loc="43" ncloc="43" packages="7" files="7" classes="7">
+<coverage generated="1522080934277" clover="3.2.0">
+  <project timestamp="1522080934277" name="All files">
+    <metrics statements="46" coveredstatements="31" conditionals="20" coveredconditionals="9" methods="24" coveredmethods="13" elements="90" coveredelements="53" complexity="0" loc="46" ncloc="46" packages="7" files="7" classes="7">
       <package name="src">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="App.js" path="/Users/eduardopedroso/poc-playground/src/App.js">
@@ -31,24 +31,27 @@
         </file>
       </package>
       <package name="src.components.common.SortableTable">
-        <metrics statements="15" coveredstatements="7" conditionals="10" coveredconditionals="3" methods="7" coveredmethods="3"/>
+        <metrics statements="18" coveredstatements="8" conditionals="14" coveredconditionals="5" methods="9" coveredmethods="3"/>
         <file name="index.js" path="/Users/eduardopedroso/poc-playground/src/components/common/SortableTable/index.js">
-          <metrics statements="15" coveredstatements="7" conditionals="10" coveredconditionals="3" methods="7" coveredmethods="3"/>
+          <metrics statements="18" coveredstatements="8" conditionals="14" coveredconditionals="5" methods="9" coveredmethods="3"/>
           <line num="6" count="1" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="22" count="1" type="stmt"/>
-          <line num="26" count="0" type="stmt"/>
-          <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="29" count="0" type="stmt"/>
-          <line num="35" count="0" type="stmt"/>
-          <line num="38" count="0" type="stmt"/>
-          <line num="45" count="1" type="stmt"/>
-          <line num="47" count="1" type="stmt"/>
-          <line num="51" count="0" type="cond" truecount="1" falsecount="1"/>
-          <line num="54" count="0" type="cond" truecount="1" falsecount="1"/>
-          <line num="57" count="0" type="cond" truecount="1" falsecount="1"/>
-          <line num="64" count="4" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="30" count="1" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="52" count="1" type="stmt"/>
+          <line num="54" count="1" type="stmt"/>
+          <line num="58" count="0" type="cond" truecount="1" falsecount="1"/>
+          <line num="61" count="0" type="cond" truecount="1" falsecount="1"/>
+          <line num="64" count="0" type="cond" truecount="1" falsecount="1"/>
+          <line num="67" count="0" type="cond" truecount="1" falsecount="1"/>
+          <line num="70" count="0" type="cond" truecount="1" falsecount="1"/>
+          <line num="77" count="4" type="stmt"/>
         </file>
       </package>
       <package name="src.scenes.Inventory.Inventory">

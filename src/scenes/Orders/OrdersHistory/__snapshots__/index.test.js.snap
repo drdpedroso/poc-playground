@@ -15,19 +15,31 @@ exports[`OrdersHistory should render correctly 1`] = `
           className=""
           onClick={[Function]}
         >
+          Order Number
+        </th>
+        <th
+          className=""
+          onClick={[Function]}
+        >
           Name
         </th>
         <th
           className=""
           onClick={[Function]}
         >
-          Age
+          Rating
         </th>
         <th
           className=""
           onClick={[Function]}
         >
-          Gender
+          Date
+        </th>
+        <th
+          className=""
+          onClick={[Function]}
+        >
+          Order
         </th>
       </tr>
     </thead>
@@ -40,36 +52,27 @@ exports[`OrdersHistory should render correctly 1`] = `
         <td
           className=""
         >
-          John
+          37391804
         </td>
         <td
           className=""
         >
-          15
+          Leonardo Cadastro
         </td>
         <td
           className=""
         >
-          Male
-        </td>
-      </tr>
-      <tr
-        className=""
-      >
-        <td
-          className=""
-        >
-          Amber
+          1
         </td>
         <td
           className=""
         >
-          40
+          20/10/2017
         </td>
         <td
           className=""
         >
-          Female
+          R$ 224.92
         </td>
       </tr>
       <tr
@@ -78,17 +81,27 @@ exports[`OrdersHistory should render correctly 1`] = `
         <td
           className=""
         >
-          Leslie
+          32132122
         </td>
         <td
           className=""
         >
-          25
+          Eduardo pedroso
         </td>
         <td
           className=""
         >
-          Female
+          2
+        </td>
+        <td
+          className=""
+        >
+          20/10/2017
+        </td>
+        <td
+          className=""
+        >
+          R$ 229.92
         </td>
       </tr>
       <tr
@@ -97,17 +110,56 @@ exports[`OrdersHistory should render correctly 1`] = `
         <td
           className=""
         >
-          Ben
+          37391804
         </td>
         <td
           className=""
         >
-          70
+          Leonardo Cadastro
         </td>
         <td
           className=""
         >
-          Male
+          3
+        </td>
+        <td
+          className=""
+        >
+          20/10/2017
+        </td>
+        <td
+          className=""
+        >
+          R$ 224.92
+        </td>
+      </tr>
+      <tr
+        className=""
+      >
+        <td
+          className=""
+        >
+          37391804
+        </td>
+        <td
+          className=""
+        >
+          Leonardo Cadastro
+        </td>
+        <td
+          className=""
+        >
+          4
+        </td>
+        <td
+          className=""
+        >
+          20/10/2017
+        </td>
+        <td
+          className=""
+        >
+          R$ 224.92
         </td>
       </tr>
     </tbody>
