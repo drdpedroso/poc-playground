@@ -1,11 +1,14 @@
 import React from 'react'
 import graphql from 'react-apollo/graphql'
 import { AllOrder } from './api'
+import TableExampleSortable from '../../../components/common/SortableTable'
 
 export class OrdersHistory extends React.PureComponent {
   render () {
     return (
-      <div>leke3333</div>
+      <div >
+        <TableExampleSortable />
+      </div>
     )
   }
 }

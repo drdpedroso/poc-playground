@@ -3,8 +3,8 @@ import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { getMenuItems } from '../../../services/menus/menus'
-import path from 'ramda/es/path'
 import { withRouter } from 'react-router-dom'
+import get from 'lodash/get'
 
 const SlideBarContent = styled.div`
   min-height: 100vh
@@ -23,9 +23,7 @@ export class SideBarSlideAlong extends React.PureComponent {
   }
 
   changeRoute (route) {
-    this.setState({items: getMenuItems(route)}, () => {
-      console.log(this.state.items)
-    })
+    this.setState({items: getMenuItems(route)})
     this.context.router.history.push(`${route}`)
   }
 
@@ -40,8 +38,7 @@ export class SideBarSlideAlong extends React.PureComponent {
   }
 
   componentDidMount () {
-    const currentLocation = path(['props', 'location', 'pathname'], this)
-    console.log(currentLocation)
+    const currentLocation = get(this, 'props.location.pathname')
     this.setState({items: getMenuItems(currentLocation)})
   }
 

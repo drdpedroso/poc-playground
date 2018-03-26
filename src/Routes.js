@@ -5,7 +5,7 @@ import * as Orders from './scenes/Orders'
 
 const Routes = () => (
   <div>
-    <Route exac path='/' component={App} />
+    {/*<Route exac path='/' component={App} />*/}
     <Route path='/orders/' component={Orders.MyOrders} />
     <Route path='/order/' component={Orders.OrderDetails} />
     <Route path='/order-history/' component={Orders.OrderHistory} />
