@@ -1,10 +1,8 @@
 import { gql } from 'apollo-client-preset/lib/index'
 
-export const AllOrder = gql`
-query getOrders ($filter: OrderFilter!, $userToken: String!) {
-  allOrder (filter: $filter, userToken: $userToken) {
+export const AllOrdersQuery = gql`query getAllOrders ($search: String, $skip: Int, $first: Int, $userToken: String!) {
+  allOrder (search: $search, skip: $skip, first: $first, userToken: $userToken) {
     orderNumber
-    pocDocument
     customerEmail
     customerName
     deliveryType
@@ -13,5 +11,9 @@ query getOrders ($filter: OrderFilter!, $userToken: String!) {
     orderRating
     orderDate
     orderDetails
+    statusHistory {
+      status
+      comments
+    }
   }
 }`

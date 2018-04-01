@@ -9,7 +9,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 const client = new ApolloClient({
-  link: new HttpLink({uri: 'https://api.zx-courier.com/graphql'}),
+  link: new HttpLink({uri: 'https://dev.zx-courier.com/front/graphql'}),
   cache: new InMemoryCache()
 })
 

@@ -1,14 +1,10 @@
 import React from 'react'
 import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { getMenuItems } from '../../../services/menus/menus'
 import { withRouter } from 'react-router-dom'
 import get from 'lodash/get'
-
-const SlideBarContent = styled.div`
-  min-height: 100vh
-`
+import { SlideBarContent } from './style'
 
 export class SideBarSlideAlong extends React.PureComponent {
   constructor (context) {
