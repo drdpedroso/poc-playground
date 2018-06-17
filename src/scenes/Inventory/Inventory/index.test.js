@@ -1,6 +1,6 @@
 import React from 'react'
-import { Inventory } from './index'
 import renderer from 'react-test-renderer'
+import Inventory from './index'
 
 describe('Inventory ', () => {
   it('should render correctly', () => {

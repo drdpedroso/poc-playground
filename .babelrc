@@ -8,7 +8,6 @@
   "plugins": [
     "transform-do-expressions",
     "transform-async-to-generator",
-    "graphql-tag",
     "@babel/plugin-proposal-export-default-from"
   ]
 }
